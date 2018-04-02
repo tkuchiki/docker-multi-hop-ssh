@@ -1,0 +1,7 @@
+StrictHostKeyChecking no
+
+host ssh_container
+    HostName     localhost
+    Port         8022
+    User         alice
+    IdentityFile ssh/id_rsa
