@@ -9,6 +9,6 @@ $ make build
 # docker-compose up -d
 $ make up
 
-# ssh cotainer
+# multi-hop ssh
 $ make ssh
 ```
