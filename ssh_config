@@ -1,7 +1,16 @@
 StrictHostKeyChecking no
+Compression yes
 
-host ssh_container
+Host bastion
     HostName     localhost
     Port         8022
     User         alice
     IdentityFile ssh/id_rsa
+
+Host ssh1
+    HostName     ssh1
+    User         alice
+    Port         22
+    ProxyCommand ssh -o StrictHostKeyChecking=no -F ssh_config -W %h:%p bastion
+    IdentityFile ssh/id_rsa
+    

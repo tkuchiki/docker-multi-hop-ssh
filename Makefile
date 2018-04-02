@@ -11,4 +11,4 @@ up:
 	docker-compose up -d
 
 ssh:
-	ssh -F ssh_config ssh_container
+	ssh -F ssh_config ssh1
