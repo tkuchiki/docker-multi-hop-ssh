@@ -1,9 +1,12 @@
-.PHONY:	build up ssh
+.PHONY:	ssh_keygen build up ssh
+
+ssh_keygen:
+	ssh-keygen -f ./ssh/id_rsa -N '' -t rsa
 
 build:
 	mkdir -p ssh
 ifeq (,$(wildcard ssh/id_rsa))
-	ssh-keygen -f ./ssh/id_rsa -N '' -t rsa
+	make ssh_keygen
 endif
 	docker-compose build
 

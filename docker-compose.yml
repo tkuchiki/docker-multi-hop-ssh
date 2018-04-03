@@ -3,12 +3,14 @@ services:
   bastion:
     build: .
     image: alpine-ssh
+    hostname: bastion
     container_name: bastion
     ports:
       - "8022:22"
   ssh1:
     build: .
     image: alpine-ssh
+    hostname: ssh1
     container_name: ssh1
     links:
       - bastion
